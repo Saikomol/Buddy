@@ -1,7 +1,15 @@
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
-const User = () => {
+import { useNavigate } from "react-router-dom";
+
+const User = ({user}) => {
+
+  const navigate = useNavigate();
   const { id } = useParams();
+  if (!user){
+    navigate('/login')
+    return null;
+  }
   useEffect(()=>{
     // grab user from database
     // let user = fetch(`users/${id}`)
