@@ -13,7 +13,7 @@ const Login = ({ setToken }) => {
     const data = await login(username, password);
     console.log(data.token);
      if (data.token) {
-    // localStorage.setItem('token', data.token);
+    localStorage.setItem('token', data.token);
       setToken(data.token); 
       navigate('/')
     }

@@ -15,11 +15,11 @@ import Navbar from "./API/Navbar";
 function App() {
   const [user, setUser] = useState(null); // for not login user we
   // we will place set token in more inportant things page
-const [token,setToken] = useState(null)//localStorage.getItem(token)
+const [token,setToken] = useState(localStorage.getItem('token'))//
 console.log(token);
   return (
     <div>
-      <Navbar user = {user}/>{/*props user to navbar// to not show if user is not log in  */}
+      <Navbar token = {token}/>{/*props user to navbar// to not show if user is not log in  */}
       <main>
         <Routes>
           <Route path="/" element={<Home />} />

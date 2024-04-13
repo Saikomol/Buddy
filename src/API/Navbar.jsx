@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"; //2
 
-const Navbar = ({ user }) => {
+const Navbar = ({ token }) => {
   return (
     <nav>
       <ul>
@@ -13,7 +13,7 @@ const Navbar = ({ user }) => {
         <li>
           <Link to="contact">contact</Link>
         </li>
-        {!user && (
+        {!token && (
           <>
             <li>
               <Link to="Login">Login</Link>
@@ -23,7 +23,7 @@ const Navbar = ({ user }) => {
             </li>
           </>
         )}
-        <li>{user && <Link to="users">users</Link>}</li>
+        <li>{token && <Link to="users">users</Link>}</li>
       </ul>
     </nav>
   );
